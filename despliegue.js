@@ -1,5 +1,5 @@
 // Se toma esta parte del codigo de main para demostrar export/import
-exports.despliegueTabla = function (tblPeliculas, response){
+function despliegueTabla (response){
     
     tblPeliculas.innerHTML = "";
     for(const pelicula of response.data){

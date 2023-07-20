@@ -6,26 +6,26 @@ async function cargarDatos(){
 
     //peticion a la api
     const request = await fetch("http://ucamp.alumnos.dev4humans.com.mx/Main/endpoint_libros");
-  const response = await request.json()
+  const response = await request.json() //recibe objeto json y o convertimos a JS
     console.log(response);
 
     let etiquetas = response.data.map((item) => {
-        return item.nombre.toUpperCase();
+        return item.nombre.toUpperCase(); //datos para crear etoquetas
     });
 
-    let info_data = response.data.map((data) =>{
+    let info_data = response.data.map((data) =>{ //se obtiene a información
         return data.ventas_millones;
     });
-
+//dibuja la gráfica
     const myChart = new Chart(grafica, {
-        type: "bar",
+        type: "bar", //tipo de grafica
         data :{
             labels: etiquetas,
             datasets:[
                 {
                     label: "Ventas",
                     data: info_data,
-                    fill: true,
+                    fill: true, //rellena background de la barra de grafica
                     backgroundColor: "#ccd9ff",
                     borderColor: "#3366ff"
                 }
@@ -39,8 +39,9 @@ async function cargarDatos(){
             },
         },
     })
-  
-    tblPeliculas.innerHTML = "";
+  despliegueTabla (response)
+
+  /*  tblPeliculas.innerHTML = "";
     for(const pelicula of response.data){
         let tr = `<tr>
                 <td>${pelicula.id}</td>
@@ -49,7 +50,7 @@ async function cargarDatos(){
         </tr>`
         tblPeliculas.innerHTML += tr;
     }
-
+*/
 } 
 
 cargarDatos()
