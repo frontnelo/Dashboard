@@ -1,5 +1,8 @@
-
-*{
+.ph-card-header {
+    color: white !important;
+    background-color: rgb(43, 84, 221) !important;
+}
+{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -7,12 +10,4 @@
 .container{
     height: 25%;
     width: 50%;
-    background-color: aliceblue;
-}
-.card{
-    background-color: azure;
-}
-.navbar{
-    background-color: azure;
-    text-align: center;
 }
