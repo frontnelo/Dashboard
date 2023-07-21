@@ -5,7 +5,7 @@ async function cargarDatos(){
     const grafica = document.getElementById("myChart").getContext("2d");
 
     //peticion a la api
-    const request = await fetch("http://ucamp.alumnos.dev4humans.com.mx/Main/endpoint_libros");
+    const request = await fetch("https://ucamp.alumnos.dev4humans.com.mx/Main/endpoint_libros");
   const response = await request.json() //recibe objeto json y o convertimos a JS
     console.log(response);
 
